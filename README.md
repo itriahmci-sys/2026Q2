@@ -255,6 +255,25 @@
       <div class="hero-meta-item">📅&ensp;<strong>2026年6月26日　13:00 – 17:00</strong></div>
       <div class="hero-meta-item">📍&ensp;<strong>台北世貿一館 A5 會議室</strong></div>
     </div>
+    <div style="margin-bottom:20px; position:relative; display:inline-block;" id="cal-wrap">
+      <button onclick="toggleCal()" style="display:inline-flex; align-items:center; gap:8px; background:#fff; color:#0f172a; border:none; border-radius:50px; padding:13px 28px; font-size:0.97rem; font-weight:800; cursor:pointer; box-shadow:0 4px 20px rgba(0,0,0,0.2); transition:transform .2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform=''">
+        📅 加入行事曆 ▾
+      </button>
+      <div id="cal-menu" style="display:none; position:absolute; top:calc(100% + 10px); left:50%; transform:translateX(-50%); background:#fff; border-radius:16px; box-shadow:0 8px 40px rgba(0,0,0,0.18); overflow:hidden; min-width:220px; z-index:200;">
+        <a onclick="addGoogle()" href="#" style="display:flex; align-items:center; gap:12px; padding:14px 20px; text-decoration:none; color:#0f172a; font-weight:700; font-size:0.92rem; border-bottom:1px solid #f0f0f0; transition:background .15s;" onmouseover="this.style.background='#f4f7fb'" onmouseout="this.style.background=''">
+          <svg width="20" height="20" viewBox="0 0 48 48"><path fill="#4285F4" d="M45.5 24.5c0-1.4-.1-2.8-.4-4.1H24v7.8h12.1c-.5 2.7-2.1 5-4.5 6.5v5.4h7.3c4.3-3.9 6.6-9.7 6.6-15.6z"/><path fill="#34A853" d="M24 46c6.1 0 11.2-2 14.9-5.5l-7.3-5.4c-2 1.4-4.6 2.2-7.6 2.2-5.8 0-10.8-3.9-12.5-9.2H4v5.6C7.7 41.8 15.3 46 24 46z"/><path fill="#FBBC05" d="M11.5 28.1c-.5-1.4-.7-2.9-.7-4.4s.3-3 .7-4.4v-5.6H4C2.4 16.9 1.5 20.3 1.5 24s.9 7.1 2.5 10.3l7.5-6.2z"/><path fill="#EA4335" d="M24 9.5c3.3 0 6.2 1.1 8.5 3.3l6.4-6.4C34.8 2.7 29.7.5 24 .5 15.3.5 7.7 4.7 4 11.7l7.5 5.6C13.2 12.4 18.2 9.5 24 9.5z"/></svg>
+          Google 日曆
+        </a>
+        <a onclick="addApple()" href="#" style="display:flex; align-items:center; gap:12px; padding:14px 20px; text-decoration:none; color:#0f172a; font-weight:700; font-size:0.92rem; border-bottom:1px solid #f0f0f0; transition:background .15s;" onmouseover="this.style.background='#f4f7fb'" onmouseout="this.style.background=''">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#000"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          Apple 日曆（.ics）
+        </a>
+        <a onclick="addOutlook()" href="#" style="display:flex; align-items:center; gap:12px; padding:14px 20px; text-decoration:none; color:#0f172a; font-weight:700; font-size:0.92rem; transition:background .15s;" onmouseover="this.style.background='#f4f7fb'" onmouseout="this.style.background=''">
+          <svg width="20" height="20" viewBox="0 0 24 24"><rect width="24" height="24" rx="3" fill="#0078D4"/><path fill="#fff" d="M13 6h7v3h-7zM13 10.5h7V13h-7zM13 15h7v3h-7zM4 6h8v12H4z"/></svg>
+          Outlook 日曆
+        </a>
+      </div>
+    </div>
     <div class="hero-actions">
       <a class="btn-primary" href="https://forms.gle/UFmSpQdQ26bsPQi79" target="_blank">立即線上報名 →</a>
       <a class="btn-share-line" href="#" onclick="shareToLine(event)">
@@ -452,6 +471,59 @@
 </footer>
 
 <script>
+  function toggleCal() {
+    var m = document.getElementById('cal-menu');
+    m.style.display = m.style.display === 'none' ? 'block' : 'none';
+  }
+  document.addEventListener('click', function(e) {
+    if (!document.getElementById('cal-wrap').contains(e.target))
+      document.getElementById('cal-menu').style.display = 'none';
+  });
+
+  var EVT = {
+    title: '數位心路：跨域整合科技與動態需求的心理健康照護新典範',
+    loc: '台北世貿一館A5會議室，110臺北市信義區信義路五段5號',
+    start: '20260626T050000Z', // 13:00 CST = 05:00 UTC
+    end:   '20260626T090000Z', // 17:00 CST = 09:00 UTC
+    desc: '健康樂活與智慧醫療照護聯盟2026第二季論壇'
+  };
+
+  function addGoogle(e) {
+    if(e) e.preventDefault();
+    var url = 'https://calendar.google.com/calendar/render?action=TEMPLATE'
+      + '&text=' + encodeURIComponent(EVT.title)
+      + '&dates=' + EVT.start + '/' + EVT.end
+      + '&location=' + encodeURIComponent(EVT.loc)
+      + '&details=' + encodeURIComponent(EVT.desc);
+    window.open(url, '_blank');
+    document.getElementById('cal-menu').style.display = 'none';
+  }
+
+  function addApple(e) {
+    if(e) e.preventDefault();
+    var ics = ['BEGIN:VCALENDAR','VERSION:2.0','BEGIN:VEVENT',
+      'DTSTART:' + EVT.start, 'DTEND:' + EVT.end,
+      'SUMMARY:' + EVT.title, 'LOCATION:' + EVT.loc,
+      'DESCRIPTION:' + EVT.desc,
+      'END:VEVENT','END:VCALENDAR'].join('\r\n');
+    var blob = new Blob([ics], {type:'text/calendar'});
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'digital_mindpath_2026.ics';
+    a.click();
+    document.getElementById('cal-menu').style.display = 'none';
+  }
+
+  function addOutlook(e) {
+    if(e) e.preventDefault();
+    var url = 'https://outlook.live.com/calendar/0/deeplink/compose?subject=' + encodeURIComponent(EVT.title)
+      + '&startdt=2026-06-26T13:00:00&enddt=2026-06-26T17:00:00'
+      + '&location=' + encodeURIComponent(EVT.loc)
+      + '&body=' + encodeURIComponent(EVT.desc);
+    window.open(url, '_blank');
+    document.getElementById('cal-menu').style.display = 'none';
+  }
+
   function shareToLine(e) {
     e.preventDefault();
     var msg = '【論壇活動】數位心路：跨域整合科技與動態需求的心理健康照護新典範\n📅 2026年6月26日 13:00–17:00\n📍 台北世貿一館A5會議室\n\n' + window.location.href;
