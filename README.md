@@ -388,6 +388,39 @@
   </div>
 </section>
 
+<!-- LINKS -->
+<section id="links" style="background: var(--bg); padding: 64px 24px;">
+  <div class="container">
+    <div class="section-label">關於聯盟</div>
+    <h2 class="section-title">更多資源</h2>
+    <div class="divider"></div>
+    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px;">
+      <a href="https://forms.gle/9NUgEQhRgdmMXhHv6" target="_blank" style="text-decoration:none;">
+        <div class="highlight-card" style="display:flex; align-items:center; gap:20px; padding: 28px;">
+          <div style="font-size:2.8rem; flex-shrink:0;">🏥</div>
+          <div>
+            <div style="font-size:1rem; font-weight:800; color:var(--text); margin-bottom:6px;">聯盟簡介</div>
+            <div style="font-size:0.87rem; color:var(--muted); line-height:1.6;">了解健康樂活與智慧醫療照護聯盟的使命、願景與成員組成。</div>
+            <div style="margin-top:10px; font-size:0.82rem; font-weight:700; color:var(--accent1);">查看簡介 →</div>
+          </div>
+        </div>
+      </a>
+      <a href="https://open.spotify.com/show/3qt7N1AMkPZek38xE0dvjp?si=78e4b1208d0b48ce" target="_blank" style="text-decoration:none;">
+        <div class="highlight-card" style="display:flex; align-items:center; gap:20px; padding: 28px;">
+          <div style="flex-shrink:0;">
+            <svg width="48" height="48" viewBox="0 0 168 168"><path fill="#1DB954" d="M84 0C37.6 0 0 37.6 0 84s37.6 84 84 84 84-37.6 84-84S130.4 0 84 0zm38.6 121.2c-1.5 2.5-4.8 3.3-7.3 1.8-20-12.2-45.2-15-74.9-8.2-2.9.7-5.7-1.1-6.4-4-.7-2.9 1.1-5.7 4-6.4 32.5-7.4 60.4-4.2 82.9 9.5 2.4 1.5 3.2 4.8 1.7 7.3zm10.3-22.9c-1.9 3.1-6 4.1-9.1 2.2-22.9-14.1-57.8-18.2-84.9-9.9-3.5 1.1-7.2-.9-8.3-4.4-1.1-3.5.9-7.2 4.4-8.3 30.9-9.4 69.3-4.8 95.7 11.3 3.1 1.9 4.1 6 2.2 9.1zm.9-23.8c-27.5-16.3-72.9-17.8-99.2-9.8-4.2 1.3-8.6-1.1-9.9-5.3-1.3-4.2 1.1-8.6 5.3-9.9 30.2-9.2 80.3-7.4 112 11.3 3.8 2.2 5 7.1 2.8 10.8-2.2 3.8-7.1 5.1-11 2.9z"/></svg>
+          </div>
+          <div>
+            <div style="font-size:1rem; font-weight:800; color:var(--text); margin-bottom:6px;">聯盟 Podcast</div>
+            <div style="font-size:0.87rem; color:var(--muted); line-height:1.6;">收聽智慧醫療照護相關議題的深度對談，隨時隨地掌握產業脈動。</div>
+            <div style="margin-top:10px; font-size:0.82rem; font-weight:700; color:#1DB954;">前往收聽 →</div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- REGISTER -->
 <section id="register">
   <div class="container">
