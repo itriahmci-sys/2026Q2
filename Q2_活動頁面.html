@@ -392,7 +392,7 @@
         <div class="agenda-time">16:10 – 16:40</div>
         <div class="agenda-content">
           <div class="agenda-title">科技可以幫忙兒童身心治療甚麼？（暫訂）</div>
-          <div class="agenda-speaker">林籠昌主任　高醫附設中和紀念醫院小兒神經科</div>
+          <div class="agenda-speaker">林龍昌主任　高醫附設中和紀念醫院小兒神經科</div>
         </div>
       </div>
       <div class="agenda-item">
